@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduKids — Learn Python (6-12 yrs)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--primary:#3B82F6; --accent:#F97316; --soft:#EFF6FF; --card:#ffffff; --kid-font: 'Comic Sans MS', 'Trebuchet MS', system-ui, -apple-system;}
+    body{background: linear-gradient(180deg,#f8fafc 0%, #fff 40%); font-family: Inter, system-ui, -apple-system, sans-serif;}
+    .hero{padding:3.5rem 0;}
+    .logo{font-weight:800; color:var(--primary); font-family:var(--kid-font);}
+    .level-card{border-radius:12px; box-shadow:0 6px 18px rgba(59,130,246,0.08);}
+    .teacher-card{border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.06); background:linear-gradient(180deg,#fff,#fbfeff);}
+    .playful{background:linear-gradient(90deg, rgba(59,130,246,0.06), rgba(249,115,22,0.03)); padding:1rem; border-radius:10px}
+    .btn-cta{background:var(--primary); color:white; border-radius:10px; padding:10px 16px;}
+    .shape{position:absolute; border-radius:50%; opacity:0.12;}
+    .shape.s1{width:120px;height:120px; background:#f97316; right:6%; top:-10px}
+    .shape.s2{width:80px;height:80px; background:#3b82f6; left:6%; top:10px}
+    footer{padding:2rem 0;}
+    .slot-btn.active{box-shadow:0 6px 18px rgba(59,130,246,0.12);}
+    .rating {color:#f59e0b}
+    @media(max-width:576px){ .hero{padding:2rem 0} }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand logo" href="#home">EduKids</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#teachers">Teachers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking">Appointments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3"><button class="btn btn-outline-primary">Sign in</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container position-relative">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-6 fw-bold">Playful Python for Kids (6–12 yrs)</h1>
+          <p class="lead">Structured beginner → intermediate → advanced tracks with live classes, quizzes & 1:1 teacher appointments.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a class="btn btn-cta" href="#courses">Explore Courses</a>
+            <a class="btn btn-outline-secondary" href="#booking">Book Appointment</a>
+          </div>
+          <div class="mt-4 playful">
+            <strong>Learning Path:</strong> <span class="text-muted">Blocks → Code → Projects</span>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block text-end">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kids-coding" class="img-fluid rounded-3 shadow-lg" style="max-height:320px; object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- COURSES -->
+  <section id="courses" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-semibold">Course Levels</h2>
+        <p class="text-muted">Beginner → Intermediate → Advanced (Python, Data Structures, Data Science)</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 level-card h-100">
+            <h4>Beginner</h4>
+            <p class="text-muted">Python basics using playful examples and block-to-code transitions.</p>
+            <ul>
+              <li>Syntax & print</li>
+              <li>Variables & simple games</li>
+              <li>Fun projects</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="badge bg-success">Free</span>
+              <div>
+                <button class="btn btn-sm btn-primary me-2" onclick="openCourse('Beginner')">Preview</button>
+                <button class="btn btn-sm btn-outline-primary" onclick="enroll('Beginner')">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 level-card h-100">
+            <h4>Intermediate</h4>
+            <p class="text-muted">Python + Data Structures: lists, loops, functions and small algorithms.</p>
+            <ul>
+              <li>Functions & loops</li>
+              <li>Lists, stacks, queues</li>
+              <li>Mini projects & puzzles</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="badge bg-info">Structured</span>
+              <div>
+                <button class="btn btn-sm btn-primary me-2" onclick="openCourse('Intermediate')">Preview</button>
+                <button class="btn btn-sm btn-outline-primary" onclick="enroll('Intermediate')">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 level-card h-100">
+            <h4>Advanced</h4>
+            <p class="text-muted">Python + Data Science + Data Structures: projects, visuals, and beginner ML ideas.</p>
+            <ul>
+              <li>Data handling</li>
+              <li>Visualizations & simple ML</li>
+              <li>Capstone project</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="badge bg-warning text-dark">Certificate</span>
+              <div>
+                <button class="btn btn-sm btn-primary me-2" onclick="openCourse('Advanced')">Preview</button>
+                <button class="btn btn-sm btn-outline-primary" onclick="enroll('Advanced')">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHERS -->
+  <section id="teachers" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Our Teachers</h2>
+        <p class="text-muted">Experienced educators: Professors, Ph.D. tutors and certified instructors for personalized 1:1 help.</p>
+      </div>
+      <div class="row g-4" id="teacherGrid">
+        <!-- teacher cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / APPOINTMENTS -->
+  <section id="booking" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Student Appointments & Slot Booking</h2>
+        <p class="text-muted">Parents can book a 1:1 appointment (trial / counselling / doubt clearing). Slots show availability and can be added to Google Calendar.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h5>Book a Slot</h5>
+            <form id="bookingForm">
+              <div class="mb-3">
+                <label class="form-label">Student name</label>
+                <input id="studentName" class="form-control" placeholder="e.g. Aarav">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Parent contact (email)</label>
+                <input id="parentEmail" class="form-control" placeholder="parent@example.com">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Choose course level</label>
+                <select id="courseLevel" class="form-select">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Choose a date</label>
+                <input id="slotDate" type="date" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Available time slots</label>
+                <div id="slots" class="d-flex flex-wrap gap-2">
+                  <!-- buttons injected by JS -->
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Selected teacher (optional)</label>
+                <input id="selectedTeacher" class="form-control" placeholder="Choose from teachers" readonly>
+              </div>
+
+              <div class="text-end">
+                <button type="button" class="btn btn-primary" id="confirmBooking">Confirm & Add to Google Calendar</button>
+              </div>
+            </form>
+            <div id="bookingAlert" class="mt-3"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h5>Upcoming Bookings (Local)</h5>
+            <div id="upcomingList"></div>
+            <p class="small text-muted mt-2">Bookings are stored locally (demo). For full sync with Google Calendar and reminders, a backend with OAuth is required.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>What Parents Say</h2>
+        <p class="text-muted">Real reviews from parents — we share progress updates and certificates.</p>
+      </div>
+
+      <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <!-- testimonials injected by JS -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3>About EduKids</h3>
+          <p class="text-muted">EduKids is a playful learning platform focused on children aged 6–12, offering structured courses in Python, data structures, and beginner data science. We mix recorded lessons, live interactive classes, quizzes and 1:1 appointments for personalized support.</p>
+          <ul>
+            <li>Kid-friendly curriculum</li>
+            <li>Safe & curated content</li>
+            <li>Community learning & parent updates</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="img-fluid rounded-3 shadow-sm" alt="about"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Contact Us</h3>
+          <p class="text-muted">Have questions? Drop us a message and we'll get back to you.</p>
+          <form id="contactForm">
+            <div class="mb-3"><input id="contactName" class="form-control" placeholder="Your name"></div>
+            <div class="mb-3"><input id="contactEmail" class="form-control" placeholder="Your email"></div>
+            <div class="mb-3"><textarea id="contactMessage" class="form-control" rows="4" placeholder="Message"></textarea></div>
+            <div class="text-end"><button type="button" class="btn btn-primary" id="sendContact">Send</button></div>
+          </form>
+          <div id="contactAlert" class="mt-3"></div>
+        </div>
+        <div class="col-md-6">
+          <h5>Our Office</h5>
+          <p>EduKids • Pune, India<br>Email: hello@edukids.example<br>Phone: +91 98765 43210</p>
+          <div id="mapPlaceholder" class="border rounded p-3 text-center text-muted">Map placeholder (add embed)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white mt-5">
+    <div class="container text-center">
+      <p class="mb-0">© <strong>EduKids</strong> — playful coding for curious kids</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ---------- Data: teachers & testimonials ----------
+    const TEACHERS = [
+      {id:1, name:'Dr. Neha Sharma', title:'Ph.D. in Computer Science', bio:'10+ years teaching kids programming, focuses on playful projects.', subjects:['Beginner','Intermediate'], img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder'},
+      {id:2, name:'Prof. Rajiv Menon', title:'Professor - Algorithms', bio:'Expert in algorithms and data structures, loves puzzles and challenges.', subjects:['Intermediate','Advanced'], img:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder'},
+      {id:3, name:'Ms. Ananya Iyer', title:'Certified Python Instructor', bio:'Specializes in making data science fun and visual for kids.', subjects:['Advanced'], img:'https://images.unsplash.com/photo-1531123414780-f0b5a5a2c0a2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder'}
+    ];
+
+    const TESTIMONIALS = [
+      {name:'Rita K.', child:'Aarav (8 yrs)', rating:5, text:'My son loves the projects and the teachers are so patient. We saw rapid improvement!'},
+      {name:'Sunil P.', child:'Maya (10 yrs)', rating:4, text:'Great curriculum and friendly tutors. The certificate was a lovely surprise.'},
+      {name:'Nisha G.', child:'Rohan (12 yrs)', rating:5, text:'Practical, fun and well structured — highly recommend for young learners.'}
+    ];
+
+    // ---------- Teachers rendering ----------
+    const teacherGrid = document.getElementById('teacherGrid');
+    TEACHERS.forEach(t=>{
+      const col = document.createElement('div'); col.className='col-md-4';
+      col.innerHTML = `
+        <div class='p-3 teacher-card h-100'>
+          <div class='d-flex align-items-start gap-3'>
+            <img src='${t.img}' alt='${t.name}' class='rounded-circle' width='80' height='80' style='object-fit:cover'>
+            <div>
+              <h5 class='mb-0'>${t.name}</h5>
+              <small class='text-muted'>${t.title}</small>
+              <p class='mt-2 mb-1 text-muted' style='font-size:14px'>${t.bio}</p>
+              <div class='d-flex gap-2 mt-2'>
+                <button class='btn btn-sm btn-outline-primary' onclick="openTeacherBooking(${t.id})">Book Appointment</button>
+                <button class='btn btn-sm btn-outline-secondary' onclick="viewProfile(${t.id})">View Profile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      teacherGrid.appendChild(col);
+    });
+
+    function openTeacherBooking(id){
+      const t = TEACHERS.find(x=>x.id===id);
+      if(!t) return; document.getElementById('selectedTeacher').value = t.name; // populate booking form
+      // optionally preselect level if teacher has subjects
+      if(t.subjects && t.subjects.length>0) document.getElementById('courseLevel').value = t.subjects[0];
+      // scroll to booking
+      document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+    }
+    function viewProfile(id){
+      const t = TEACHERS.find(x=>x.id===id);
+      if(!t) return; alert(t.name + "" + t.title + "" + t.bio + "Subjects: " + t.subjects.join(', '));
+    }
+
+    // ---------- Testimonials rendering (carousel) ----------
+    const carouselInner = document.getElementById('carouselInner');
+    TESTIMONIALS.forEach((r, idx)=>{
+      const div = document.createElement('div');
+      div.className = 'carousel-item' + (idx===0? ' active':'');
+      let stars = '';
+      for(let i=0;i<r.rating;i++) stars += '★';
+      div.innerHTML = `
+        <div class='d-flex flex-column align-items-center p-4'>
+          <p class='mb-2' style='max-width:800px; text-align:center;'>"${r.text}"</p>
+          <div class='rating mb-1'>${stars}</div>
+          <div class='small text-muted'>${r.name} — ${r.child}</div>
+        </div>
+      `;
+      carouselInner.appendChild(div);
+    });
+
+    // ---------- Slot generation & booking (frontend-only demo) ----------
+    const availableTemplate = [ '10:00 AM', '11:00 AM', '02:00 PM', '04:00 PM' ];
+    const slotsContainer = document.getElementById('slots');
+    let selectedSlot = null;
+
+    function renderSlots(){
+      slotsContainer.innerHTML = '';
+      availableTemplate.forEach(time=>{
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn btn-outline-primary btn-sm slot-btn';
+        btn.textContent = time;
+        btn.onclick = ()=>{ document.querySelectorAll('.slot-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); selectedSlot = time; };
+        slotsContainer.appendChild(btn);
+      });
+    }
+    renderSlots();
+
+    // store bookings in localStorage for demo
+    function loadBookings(){
+      const data = JSON.parse(localStorage.getItem('edukids_bookings')||'[]');
+      return data;
+    }
+    function saveBooking(b){
+      const arr = loadBookings(); arr.push(b); localStorage.setItem('edukids_bookings', JSON.stringify(arr)); renderUpcoming();
+    }
+    function renderUpcoming(){
+      const list = loadBookings();
+      const container = document.getElementById('upcomingList');
+      if(list.length===0){ container.innerHTML = '<p class="text-muted">No upcoming bookings</p>'; return; }
+      container.innerHTML = '';
+      list.forEach((b,i)=>{
+        const div = document.createElement('div'); div.className='p-2 border rounded mb-2';
+        div.innerHTML = `<strong>${b.student}</strong> <small class='text-muted'>(${b.level})</small><br><small>${b.date} • ${b.time}</small><div class='mt-2'><a href='${b.gcalLink}' target='_blank' class='btn btn-sm btn-outline-secondary'>Open in Google Calendar</a> <button class='btn btn-sm btn-danger ms-2' onclick='deleteBooking(${i})'>Delete</button></div>`;
+        container.appendChild(div);
+      });
+    }
+    function deleteBooking(idx){ const arr = loadBookings(); arr.splice(idx,1); localStorage.setItem('edukids_bookings', JSON.stringify(arr)); renderUpcoming(); }
+
+    document.getElementById('confirmBooking').addEventListener('click', ()=>{
+      const student = document.getElementById('studentName').value.trim();
+      const email = document.getElementById('parentEmail').value.trim();
+      const level = document.getElementById('courseLevel').value;
+      const date = document.getElementById('slotDate').value;
+      const teacher = document.getElementById('selectedTeacher').value || '';
+      const time = selectedSlot;
+      const alertBox = document.getElementById('bookingAlert');
+      alertBox.innerHTML = '';
+      if(!student || !email || !date || !time){ alertBox.innerHTML = '<div class="alert alert-warning">Please fill all fields and choose a slot.</div>'; return; }
+
+      const startDateTime = buildDateTimeISO(date, time);
+      const endDateTime = buildDateTimeISO(date, addOneHour(time));
+
+      const title = encodeURIComponent('EduKids: ' + level + ' session with ' + student + (teacher? ' ('+teacher+')':''));
+      const details = encodeURIComponent('1:1 appointment booked via EduKids. Parent: ' + email + (teacher? ' Teacher: '+teacher : ''));
+      const gcalLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&dates=${startDateTime}/${endDateTime}`;
+
+      const booking = { student, email, level, date, time, teacher, gcalLink };
+      saveBooking(booking);
+      alertBox.innerHTML = `<div class="alert alert-success">Booking confirmed. <a href='${gcalLink}' target='_blank' class='alert-link'>Add to Google Calendar</a></div>`;
+    });
+
+    // Utility: convert date + human time (e.g. '10:00 AM') to Google Calendar dateTime format: YYYYMMDDTHHMMSSZ
+    function buildDateTimeISO(dateStr, timeStr){
+      const d = new Date(dateStr + 'T00:00');
+      const parts = timeStr.split(' ');
+      const hm = parts[0].split(':');
+      let hour = parseInt(hm[0],10); const min = parseInt(hm[1],10);
+      if(parts[1]==='PM' && hour!==12) hour += 12; if(parts[1]==='AM' && hour===12) hour = 0;
+      d.setHours(hour); d.setMinutes(min); d.setSeconds(0);
+      const yyyy = d.getUTCFullYear(); const mm = String(d.getUTCMonth()+1).padStart(2,'0'); const dd = String(d.getUTCDate()).padStart(2,'0');
+      const hh = String(d.getUTCHours()).padStart(2,'0'); const mins = String(d.getUTCMinutes()).padStart(2,'0');
+      return `${yyyy}${mm}${dd}T${hh}${mins}00Z`;
+    }
+    function addOneHour(timeStr){
+      const parts = timeStr.split(' '); const hm = parts[0].split(':'); let hour = parseInt(hm[0],10); const min = parseInt(hm[1],10);
+      if(parts[1]==='PM' && hour!==12) hour+=12; if(parts[1]==='AM' && hour===12) hour=0; hour+=1; if(hour>=24) hour-=24;
+      const ampm = hour>=12? 'PM':'AM'; let hh = hour%12; if(hh===0) hh=12; return `${String(hh).padStart(2,'0')}:${String(min).padStart(2,'0')} ${ampm}`;
+    }
+
+    // ---------- Contact form (demo) ----------
+    document.getElementById('sendContact').addEventListener('click', ()=>{
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+      const box = document.getElementById('contactAlert'); box.innerHTML = '';
+      if(!name || !email || !msg){ box.innerHTML = '<div class="alert alert-warning">Please complete the form.</div>'; return; }
+      const msgs = JSON.parse(localStorage.getItem('edukids_messages')||'[]'); msgs.push({name,email,msg,at:new Date().toISOString()}); localStorage.setItem('edukids_messages', JSON.stringify(msgs));
+      box.innerHTML = '<div class="alert alert-success">Thanks — your message has been received (demo).</div>';
+      document.getElementById('contactForm').reset();
+    });
+
+    // ---------- Init ----------
+    renderUpcoming();
+
+    // Accessibility: smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){ e.preventDefault(); const t=document.querySelector(this.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth'}); });
+    });
+
+  </script>
+</body>
+</html>
